@@ -24,6 +24,7 @@ function searchWeather(){
             updateWeather(weatherData);
         }
         else if(http.readyState===XMLHttpRequest.DONE){
+            console.log(http.status);
              alert('Something went wrong!');
         }
     };
