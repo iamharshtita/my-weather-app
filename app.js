@@ -11,13 +11,7 @@ function searchWeather(){
    
     var http= new XMLHttpRequest();
     var apikey='c566352bfcaa937d72558a18644b6cfd';
-    var url='http://api.openweathermap.org/data/2.5/weather?q='+ cityName + '&units=metric&appid=' + apikey;
-    if(location.protocol=== 'http:'){
-       url='http://api.openweathermap.org/data/2.5/weather?q='+ cityName + '&units=metric&appid=' + apikey;
-    }
-    else{
-        url='https://api.openweathermap.org/data/2.5/weather?q='+ cityName + '&units=metric&appid=' + apikey;
-    }
+    var url='https://api.openweathermap.org/data/2.5/weather?q='+ cityName + '&units=metric&appid=' + apikey;
     
     var method='GET';
 
@@ -31,7 +25,6 @@ function searchWeather(){
             updateWeather(weatherData);
         }
         else if(http.readyState===XMLHttpRequest.DONE){
-            console.log(http.status);
              alert('Something went wrong!');
         }
     };
